@@ -14,15 +14,21 @@ Create ""
 `cd database-manager`
 
 Copy the configuration file into /etc directory  
-`sudo mkdir /etc/flash-hunters`  
-`sudo cp etc/database_env.sh /etc/flash-hunters`  
+```shell script
+sudo mkdir /etc/flash-hunters  
+sudo cp etc/database_env.sh /etc/flash-hunters
+```  
 
 Edit the file with your own configuration  
-`sudo nano /etc/flash-hunters/database_env.sh`  
+```shell script
+sudo nano /etc/flash-hunters/database_env.sh
+```  
 
 ### Script automation with crontab
 
 Open editor for crontab  
-`crontab -e`  
+```shell script
+crontab -e
+```  
 and then add the following line (you can change the script path according to your configuration) :  
 `0 22 * * sun ~/database-manager/bin/updateMosaics.sh` (for an update every sunday at 10pm) 
