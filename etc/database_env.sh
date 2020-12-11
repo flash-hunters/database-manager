@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # path of database-manager directory
-SCRAPING_PATH="~/database-manager"
+SCRAPING_PATH="$HOME/database-manager"
 
 # database server credentials
 DB_SERVER="127.0.0.1"
@@ -10,4 +10,4 @@ DB_USER=""
 DB_PASSWORD=""
 
 
-# TODO SSL options if remote server
+# TODO: add SSL options in case of a remote server
