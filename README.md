@@ -7,7 +7,7 @@ Install mongoDB
 Create "invaders" database
 Create ""
 
-### Installation
+## Installation
 
 `git clone https://github.com/flash-hunters/database-manager.git`
 
