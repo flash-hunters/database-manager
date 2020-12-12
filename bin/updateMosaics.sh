@@ -3,7 +3,7 @@
 source /etc/flash-hunters/database_env.sh
 # source etc/database_env.sh
 
-cd "$SCRAPING_PATH" || exit
+cd "$SCRAPING_PATH" || exit 1
 
 if ! venv/bin/python3 -m src.scrape; then
   echo "Error while scanning data from web."
@@ -14,7 +14,7 @@ echo "Scan completed."
 if [ -z "$DB_USER" ]; then
   uri_prefix=""
 else
-  if [ -z "$DB_PASSWORD" ]; then
+  if [ -n "$DB_PASSWORD" ]; then
     uri_prefix="$DB_DB_USER/$DB_PASSWORD@"
   else
     uri_prefix="$DB_DB_USER@"
