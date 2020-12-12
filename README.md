@@ -27,7 +27,7 @@ sudo nano /etc/flash-hunters/database_env.sh
 ### Script automation with crontab
 
 Open editor for crontab  
-```shell
+```shell script
 crontab -e
 ```  
 and then add the following line (change the script path according to your configuration) :  
