@@ -14,16 +14,16 @@ fi
 echo "Scan completed."
 
 if [ -z "$DB_USER" ]; then
-  uri_prefix="mongodb://"
+  uri_prefix=""
 else
   if [ -n "$DB_PASSWORD" ]; then
-    uri_prefix="$uri_prefix$DB_DB_USER:$DB_PASSWORD@"
+    uri_prefix="$DB_DB_USER:$DB_PASSWORD"
   else
-    uri_prefix="$DB_DB_USER@"
+    uri_prefix="$DB_DB_USER"
   fi
 fi
 
-mongoimport --uri "$uri_prefix$DB_SERVER:$DB_PORT" \
+mongoimport --uri "mongodb://$uri_prefix@$DB_SERVER:$DB_PORT" \
   --db invaders --collection mosaic --mode merge --upsertFields id \
   --file out/mosaic.json --jsonArray
 
