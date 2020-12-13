@@ -17,7 +17,7 @@ if [ -z "$DB_USER" ]; then
   uri_prefix="mongodb://"
 else
   if [ -n "$DB_PASSWORD" ]; then
-    uri_prefix="$DB_DB_USER:$DB_PASSWORD@"
+    uri_prefix="$uri_prefix$DB_DB_USER:$DB_PASSWORD@"
   else
     uri_prefix="$DB_DB_USER@"
   fi
