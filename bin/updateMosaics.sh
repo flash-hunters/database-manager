@@ -5,7 +5,7 @@ source /etc/flash-hunters/database_env.sh
 
 cd "$SCRAPING_PATH" || exit 1
 
-pwd
+mkdir -p out
 
 if ! venv/bin/python -m src.scrape; then
   echo "Error while scanning data from web."
