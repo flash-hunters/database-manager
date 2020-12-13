@@ -31,4 +31,4 @@ Open editor for crontab
 crontab -e
 ```  
 and then add the following line (change the script path according to your configuration) :  
-`0 22 * * sun $HOME/database-manager/bin/updateMosaics.sh` (for an update every sunday at 10pm) 
+`0 22 * * sun <absolute path>/database-manager/bin/updateMosaics.sh` (for an update every sunday at 10pm) 
