@@ -27,4 +27,4 @@ mongoimport --uri "$uri_prefix$DB_SERVER:$DB_PORT" \
   --db invaders --collection mosaic --mode merge --upsertFields id \
   --file out/mosaic.json --jsonArray
 
-rm out/mosaic.json
+rm out/mosaics.json
