@@ -1,4 +1,4 @@
-#!/home/jack/flash-hunters/database-manager/src/venv/bin/python
+#!/home/jack/flash-hunters/database-manager/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

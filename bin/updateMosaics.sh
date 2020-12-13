@@ -7,7 +7,7 @@ cd "$SCRAPING_PATH" || exit 1
 
 pwd
 
-if ! src/venv/bin/python -m src.scrape; then
+if ! venv/bin/python -m src.scrape; then
   echo "Error while scanning data from web."
   exit 1
 fi
