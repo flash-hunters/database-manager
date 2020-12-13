@@ -14,7 +14,7 @@ fi
 echo "Scan completed."
 
 if [ -z "$DB_USER" ]; then
-  uri_prefix=""
+  uri_prefix="mongodb://"
 else
   if [ -n "$DB_PASSWORD" ]; then
     uri_prefix="$DB_DB_USER/$DB_PASSWORD@"
