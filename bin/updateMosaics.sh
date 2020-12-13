@@ -13,17 +13,19 @@ if ! venv/bin/python -m src.scrape; then
 fi
 echo "Scan completed."
 
-if [ -z "$DB_USER" ]; then
+if [ -n "$DB_USER" ]; then
   uri_prefix=""
 else
-  if [ -n "$DB_PASSWORD" ]; then
-    uri_prefix="$DB_DB_USER:$DB_PASSWORD"
-  else
-    uri_prefix="$DB_DB_USER"
-  fi
+  uri_prefix="$DB_USER@"
 fi
 
-mongoimport --uri "mongodb://$uri_prefix@$DB_SERVER:$DB_PORT" \
+if [ -n "$DB_PASSWORD" ]; then
+  password_option="--password \"$DB_PASSWORD\""
+else
+  password_option=""
+fi
+
+mongoimport --uri "mongodb://$uri_prefix@$DB_SERVER:$DB_PORT" $password_option \
   --db invaders --collection mosaic --mode merge --upsertFields id \
   --file out/mosaic.json --jsonArray
 
