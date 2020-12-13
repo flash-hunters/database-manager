@@ -25,7 +25,13 @@ else
   password_option=""
 fi
 
-mongoimport --uri "mongodb://$uri_prefix@$DB_SERVER:$DB_PORT" $password_option \
+if [ -n "$DB_AUTHENTICATION_DB" ]; then
+  authentication_option="--authenticationDatabase $DB_AUTHENTICATION_DB"
+else
+  authentication_option=""
+fi
+
+mongoimport --uri "mongodb://$uri_prefix$DB_SERVER:$DB_PORT" $password_option \
   --db invaders --collection mosaic --mode merge --upsertFields id \
   --file out/mosaic.json --jsonArray
 
