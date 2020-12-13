@@ -33,6 +33,6 @@ fi
 
 mongoimport --uri "mongodb://$uri_prefix$DB_SERVER:$DB_PORT" $password_option $authentication_option \
   --db invaders --collection mosaic --mode merge --upsertFields id \
-  --file out/mosaic.json --jsonArray
+  --file out/mosaics.json --jsonArray
 
 rm out/mosaics.json
