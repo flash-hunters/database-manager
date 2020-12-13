@@ -14,9 +14,9 @@ fi
 echo "Scan completed."
 
 if [ -n "$DB_USER" ]; then
-  uri_prefix=""
-else
   uri_prefix="$DB_USER@"
+else
+  uri_prefix=""
 fi
 
 if [ -n "$DB_PASSWORD" ]; then
